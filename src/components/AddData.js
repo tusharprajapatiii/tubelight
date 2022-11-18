@@ -53,11 +53,12 @@ class Form extends Component {
     e.preventDefault();
     if (
       !this.state.user.name ||
-      this.state.user.email ||
+      !this.state.user.name ||
       !this.state.user.phone ||
-      this.state.user.city
-    )
+      !this.state.user.city
+    ) {
       return;
+    }
     this.props.addUser(this.state.user);
     this.setState({
       ...this.state,
