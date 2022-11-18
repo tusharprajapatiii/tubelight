@@ -21,18 +21,15 @@ export default class AddData extends Component {
       <section
         style={{ backgroundColor: "black", height: "100vh", color: "silver" }}
       >
-        <PhoneBookForm
-          onSearchChange={this.onSearchChange}
-          addUser={this.addUser}
-        />
+        <Form onSearchChange={this.onSearchChange} addUser={this.addUser} />
         <hr />
-        <InformationTable search={this.state.search} users={this.state.users} />
+        <Table search={this.state.search} users={this.state.users} />
       </section>
     );
   }
 }
 
-class PhoneBookForm extends Component {
+class Form extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -111,7 +108,7 @@ class PhoneBookForm extends Component {
   }
 }
 
-function InformationTable(props) {
+function Table(props) {
   const sortedContacts = props.users
     .filter((u) => u.name.toLowerCase().includes(props.search.toLowerCase()))
     .sort((a, b) => a.name.localeCompare(b.name));

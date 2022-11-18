@@ -15,7 +15,7 @@ function Main() {
         </div>
         <div
           onClick={() => {
-            navigate("/addForm");
+            navigate("/addData");
           }}
         >
           <h1>AddForm</h1>
